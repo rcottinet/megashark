@@ -49,6 +49,7 @@ class MoviesController extends AppController
      */
     public function add()
     {
+        
         $movie = $this->Movies->newEntity();
         if ($this->request->is('post')) {
             $movie = $this->Movies->patchEntity($movie, $this->request->getData());
