@@ -34,10 +34,9 @@ class RoomsController extends AppController
      */
     public function view($id = null)
     {
-        $room = $this->Rooms->get($id, [
-            'contain' => []
-        ]);
-
+        $room = $this->Rooms->get($id);
+        
+        
         $this->set('room', $room);
         $this->set('_serialize', ['room']);
     }
@@ -107,4 +106,6 @@ class RoomsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+    
+    
 }
