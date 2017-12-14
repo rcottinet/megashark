@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\I18n\Time;
 
 /**
  * Movies Controller
@@ -34,6 +35,7 @@ class MoviesController extends AppController
      */
     public function view($id = null)
     {
+        
         $movie = $this->Movies->get($id, [
             'contain' => []
         ]);

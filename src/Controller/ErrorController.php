@@ -15,6 +15,7 @@
 namespace App\Controller;
 
 use Cake\Event\Event;
+use App\Controller\Time;
 
 /**
  * Error Handling Controller

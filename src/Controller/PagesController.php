@@ -18,6 +18,7 @@ use Cake\Core\Configure;
 use Cake\Network\Exception\ForbiddenException;
 use Cake\Network\Exception\NotFoundException;
 use Cake\View\Exception\MissingTemplateException;
+use Cake\I18n\Time;
 
 /**
  * Static content controller

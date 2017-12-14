@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\I18n\Time;
 
 /**
  * Rooms Controller
@@ -34,6 +35,15 @@ class RoomsController extends AppController
      */
     public function view($id = null)
     {
+        
+
+        $showtimes = $this->Rooms->Showtimes->find()->where(['room_id'=>$id,'start' >= new Time(), 'start' <= new Time('+1 week')]);
+        
+        $this->set('showtimes', $showtimes);
+        
+
+        
+        
         $room = $this->Rooms->get($id);
         
         
