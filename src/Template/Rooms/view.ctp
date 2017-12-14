@@ -39,37 +39,33 @@
             <td><?= h($room->modified) ?></td>
         </tr>
     </table>
-    <div class="related">
+</div>
+<div class="related">
         <h4><?= __('Related Showtimes') ?></h4>
-        <?php if (!empty($showtimes)): ?>
+        
         <table cellpadding="0" cellspacing="0">
             <tr>
-                <th scope="col"><?= __('L') ?></th>
-                <th scope="col"><?= __('M') ?></th>
-                <th scope="col"><?= __('M') ?></th>
-                <th scope="col"><?= __('J') ?></th>
-                <th scope="col"><?= __('V') ?></th>
-                <th scope="col"><?= __('S') ?></th>
-                <th scope="col"><?= __('D') ?></th>   
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <td>Lundi</td> 
+                <td>Mardi</td>
+                <td>Mercredi</td>
+                <td>Jeudi</td>
+                <td>Vendredi</td>
+                <td>Samedi</td>
+                <td>Dimanche</td>
+                
             </tr>
-            <?php foreach ($showtimes as $showtimes): ?>
             <tr>
-                <td><?= h([1]=>$showtimesThisWeek) ?></td>
-                <td><?= h([2]=>$showtimesThisWeek) ?></td>
-                <td><?= h([3]=>$showtimesThisWeek) ?></td>
-                <td><?= h([4]=>$showtimesThisWeek) ?></td>
-                <td><?= h([5]=>$showtimesThisWeek) ?></td>
-                <td><?= h([6]=>$showtimesThisWeek) ?></td>
-                <td><?= h([7]=>$showtimesThisWeek) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Showtimes', 'action' => 'view', $showtimes->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Showtimes', 'action' => 'edit', $showtimes->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Showtimes', 'action' => 'delete', $showtimes->id], ['confirm' => __('Are you sure you want to delete # {0}?', $showtimes->id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
-        <?php endif; ?>
-    </div>
+            <?php for($i=1;$i<7;$i++): ?>
+                <td><?php
+                        if(isset($collection[$i])){
+                            foreach($collection[$i] as $key=>$showtime){
+                                echo ($showtime->movie->name.' '); 
+                                echo ($showtime->start->format('H:i'));
+                                echo ('-'.$showtime->end->format('H:i'));
+                            }
+                        }
+                ?></td>        
+            <?php endfor; ?>
+        </tr>           
+    </table>    
 </div>
