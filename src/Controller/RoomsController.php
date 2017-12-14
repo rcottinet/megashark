@@ -39,6 +39,7 @@ class RoomsController extends AppController
 
         $showtimes = $this->Rooms->Showtimes->find()->where(['room_id'=>$id,'start' >= new Time(), 'start' <= new Time('+1 week')]);
         
+        
         $this->set('showtimes', $showtimes);
         
 

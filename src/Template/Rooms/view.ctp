@@ -44,24 +44,24 @@
         <?php if (!empty($showtimes)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
-                <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Movie Id') ?></th>
-                <th scope="col"><?= __('Room Id') ?></th>
-                <th scope="col"><?= __('Start') ?></th>
-                <th scope="col"><?= __('End') ?></th>
-                <th scope="col"><?= __('Created') ?></th>
-                <th scope="col"><?= __('Modified') ?></th>
+                <th scope="col"><?= __('L') ?></th>
+                <th scope="col"><?= __('M') ?></th>
+                <th scope="col"><?= __('M') ?></th>
+                <th scope="col"><?= __('J') ?></th>
+                <th scope="col"><?= __('V') ?></th>
+                <th scope="col"><?= __('S') ?></th>
+                <th scope="col"><?= __('D') ?></th>   
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($showtimes as $showtimes): ?>
             <tr>
-                <td><?= h($showtimes->id) ?></td>
-                <td><?= h($showtimes->movie_id) ?></td>
-                <td><?= h($showtimes->room_id) ?></td>
-                <td><?= h($showtimes->start) ?></td>
-                <td><?= h($showtimes->end) ?></td>
-                <td><?= h($showtimes->created) ?></td>
-                <td><?= h($showtimes->modified) ?></td>
+                <td><?= h([1]=>$showtimesThisWeek) ?></td>
+                <td><?= h([2]=>$showtimesThisWeek) ?></td>
+                <td><?= h([3]=>$showtimesThisWeek) ?></td>
+                <td><?= h([4]=>$showtimesThisWeek) ?></td>
+                <td><?= h([5]=>$showtimesThisWeek) ?></td>
+                <td><?= h([6]=>$showtimesThisWeek) ?></td>
+                <td><?= h([7]=>$showtimesThisWeek) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Showtimes', 'action' => 'view', $showtimes->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Showtimes', 'action' => 'edit', $showtimes->id]) ?>
